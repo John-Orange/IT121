@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HW2</title>
+    </head>
+<body>
+
+
+
+  
+<p>hello</p>
+
+Enter your word: <input type= text id="text">
+
+<button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+<script>
+
+function myFunction() {
+  var text = document.getElementById("text").value;
+
+  if (text == "") {
+    document.getElementById("demo").innerHTML = "warning message";
+  }
+  else if (
+    (text.slice(0,1) == "a") ||
+	(text.slice(0,1) == "e") ||
+    (text.slice(0,1) == "i") ||
+    (text.slice(0,1) == "o") ||
+    (text.slice(0,1) == "u")){
+    document.getElementById("demo").innerHTML = text + "way";
+  } else if (
+    (text.slice(1,2) == "a") ||
+    (text.slice(1,2) == "e") ||
+    (text.slice(1,2) == "i") ||
+    (text.slice(1,2) == "o") ||
+    (text.slice(1,2) == "u")){
+    document.getElementById("demo").innerHTML = text.slice(1) + text.slice(0,1) + "ay";
+  }
+    else if (
+    (text.slice(2,3) == "a") ||
+    (text.slice(2,3) == "e") ||
+    (text.slice(2,3) == "i") ||
+    (text.slice(2,3) == "o") ||
+    (text.slice(2,3) == "u")){
+    document.getElementById("demo").innerHTML = text.slice(2) + text.slice(0,2) + "ay";
+  }
+  	else if (
+    (text.slice(3,4) == "a") ||
+    (text.slice(3,4) == "e") ||
+    (text.slice(3,4) == "i") ||
+    (text.slice(3,4) == "o") ||
+    (text.slice(3,4) == "u")){
+    document.getElementById("demo").innerHTML = text.slice(3) + text.slice(0,3) + "ay";
+  }
+  	else if (
+    (text.slice(4,5) == "a") ||
+    (text.slice(4,5) == "e") ||
+    (text.slice(4,5) == "i") ||
+    (text.slice(4,5) == "o") ||
+    (text.slice(4,5) == "u")){
+  	document.getElementById("demo").innerHTML = text.slice(4) + text.slice(0,4) + "ay";
+  }
+  	else{
+    document.getElementById("demo").innerHTML = text;
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
