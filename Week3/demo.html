@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HW3</title>
+    </head>
+<body>
+
+
+
+<p>hello</p>
+
+
+
+
+<script>
+
+var grades = "jim|25, sue|32, mary|34, ann|22, ted|28, frank|15, lisa|19, mike|30, ahn|26, vishaya|27";
+
+let sum = 0;
+let MaxScore = 0;
+let MinScore = 50;
+
+grades = grades.split(", ");
+
+grades.sort();
+
+
+for (n=0; n < grades.length; n++) {
+    grades[n]=grades[n].charAt(0).toUpperCase() + grades[n].slice(1);
+    student = grades[n].split("|");
+    score = parseInt(student[1]);
+    document.write(student[0] + " " + score + "<br>");
+    
+    sum += score;
+    if (score > MaxScore) {
+        MaxScore = score;
+    }
+
+    if (score < MinScore) {
+         MinScore = score;
+    }
+}
+
+    document.write(
+    "<br>Sum:" + sum +
+    "<br>Max Score:" + MaxScore + 
+    "<br>Min Score:" + MinScore +
+    "<br>Average:" + sum/grades.length
+    );
+
+
+
+
+</script>
+
+</body>
+
+</html>
