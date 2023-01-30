@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<h1>Functions & validation</h1>
+
+<form id="form1" action="#" onsubmit="return validateForm(this);">
+  first name: <input type="text" name="firstname"><br>
+  last name: <input type="text" name="lastname"><br>
+  password: <input type="text" name="password"><br>
+
+  <button >Check</button>
+</form>
+
+<hr><div id="message"></div>
+
+<script>
+
+// add validatePassword function here
+const validatePassword = (password) => {
+  let lowerCases = "abcdefghijklmnopqrstuvwxyz";
+  let upperCases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+  for(let p of password){
+    if (lowerCases.includes(p) && upperCases.includes(p))  //I stuck in here, "&&"" doesn't work.
+    return false;
+  }
+  
+  return true;
+}
+
+
+
+
+const validateForm = (myForm) => {
+
+  var firstname = myForm.firstname.value; // get text of firstname field
+  var lastname = myForm.lastname.value;
+  var password = myForm.password.value;
+  if (firstname == ""){
+  $("#message").html("First name is missing");
+  return false;
+  }
+  if (lastname == ""){
+  $("#message").html("Last name is missing");
+  return false;
+  }
+  if (validatePassword(password)){
+  $("#message").html("no");
+  return false;
+  }
+
+  $("#message").html("yes");
+  
+
+  return false; // prevent page reload
+}
+
+</script>
+
+</body>
+</html>
