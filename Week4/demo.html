@@ -21,17 +21,20 @@
 
 // add validatePassword function here
 const validatePassword = (password) => {
-  let lowerCases = "abcdefghijklmnopqrstuvwxyz";
-  let upperCases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCases= /[a-z]/;
+  var upperCases= /[A-Z]/;
 
-
-  for(let p of password){
-    if (lowerCases.includes(p) && upperCases.includes(p))  //I stuck in here, "&&"" doesn't work.
+  if ((password.length > 8) && (lowerCases.test(password)) &&(upperCases.test(password))){
     return false;
   }
-  
-  return true;
+
+return true;
+
+
+
+
 }
+
 
 
 
@@ -49,12 +52,12 @@ const validateForm = (myForm) => {
   $("#message").html("Last name is missing");
   return false;
   }
-  if (validatePassword(password)){
-  $("#message").html("no");
+  if (!validatePassword(password)){
+  $("#message").html("Valid password");
   return false;
   }
 
-  $("#message").html("yes");
+  $("#message").html("Least 8 characters, at least one uppercase letter, and at  least one lowercase letter for your password");
   
 
   return false; // prevent page reload
