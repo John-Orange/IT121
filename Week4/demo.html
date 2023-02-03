@@ -24,7 +24,7 @@ const validatePassword = (password) => {
   var lowerCases= /[a-z]/;
   var upperCases= /[A-Z]/;
 
-  if ((password.length > 8) && (lowerCases.test(password)) &&(upperCases.test(password))){
+  if ((password.length > 7) && (lowerCases.test(password)) &&(upperCases.test(password))){
     return false;
   }
 
