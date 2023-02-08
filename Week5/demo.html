@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+<h1>Robo Dealer</h1>
+
+  <button onclick="dealHand();">Deal Hand</button>
+
+<hr><div id="card_hand"></div>
+
+<script>
+
+var values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+var suits = ["Spades", "Hearts", "Clubs", "Diamonds"];
+var deck = [];
+
+const dealHand = () => {
+  for (suit = 0; suit < 4; suit++){
+    for (value = 0; value < 13; value++){
+        deck.push(values[value] + " of " + suits[suit])
+    }
+}
+
+f1 = deck[Math.floor(Math.random() * deck.length)];
+f2 = deck[Math.floor(Math.random() * deck.length)];
+f3 = deck[Math.floor(Math.random() * deck.length)];
+f4 = deck[Math.floor(Math.random() * deck.length)];
+f5 = deck[Math.floor(Math.random() * deck.length)];
+
+
+  $("#card_hand").html(f1 + "<br>" + f2 + "<br>" + f3 + "<br>" + f4 + "<br>" + f5 + "<br>");
+
+  return false; // prevent page reload
+}
+
+</script>
+
+</body>
+</html>
