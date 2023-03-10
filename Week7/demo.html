@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <style>
+        .over {
+            background-color: orange;
+        }
+        .selected {
+            background-color: green;
+        }
+
+
+
+    </style>
+
+    <body>
+
+        <table border='1'>
+            <tr>
+                <th>name</th>
+                <th>role</th>
+                <th>house</th>
+                <th>gender</th>
+                <th>alignment</th>
+            </tr>
+            <tbody id = "myTable"></tbody>
+
+        </table>
+        <button id = "reset">Reset</button>
+        <button id = "g">Gryffindor</button>
+        <button id = "h">Hufflepuff</button>
+        <button id = "s">Slytherin</button>
+        <button id = "r">Ravenclaw</button>
+
+    </body>
+        
+        <script>
+        // list of characters
+        var characters = [
+        {name:"Albus Dumbledore", role:"staff", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Nymphadora Tonks", role:"", house:"Hufflepuff",gender:"f",alignment:"good"},    
+        {name:"Ron Weasley", role:"student", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Ginny Weasley", role:"student", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Hermione Granger", role:"student", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Mad-eye Moody", role:"staff", house:"",gender:"m",alignment:"good"},    
+        {name:"Prof McGonagall", role:"staff", house:"Gryffindor",gender:"f",alignment:"good"},    
+        {name:"Harry Potter", role:"student", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Draco Malfoy", role:"student", house:"Slytherin",gender:"m",alignment:"evil"},    
+        {name:"Hagrid", role:"staff", house:"Gryffindor",gender:"m",alignment:"good"},    
+        {name:"Luna Lovegood", role:"student", house:"Ravenclaw",gender:"f",alignment:"good"},    
+        {name:"Voldemort", role:"", house:"Slytherin",gender:"m",alignment:"evil"},    
+        {name:"Bellatrix Lestrange", role:"", house:"Slytherin",gender:"f",alignment:"evil"},           
+        {name:"Severus Snape", role:"staff", house:"Slytherin",gender:"m",alignment:"?"}
+        ];
+        
+        $(document).ready(function(){
+
+
+
+        buildTable(characters)
+        function buildTable(data){
+            var table = document.getElementById("myTable")
+
+            for (var i=0; i < data.length; i++){
+                var row = `<tr>
+                                <td>${data[i].name}</td>
+                                <td>${data[i].role}</td>
+                                <td>${data[i].house}</td>
+                                <td>${data[i].gender}</td>
+                                <td>${data[i].alignment}</td>
+                        </tr>`
+                table.innerHTML += row
+
+
+            }
+
+        }
+
+
+        $("#reset").click(rs);
+        $("#g").click(g);
+        $("#h").click(h);
+        $("#s").click(s);
+        $("#r").click(r);
+
+
+         function g(){
+            $('tr').hide();
+            $('tr:contains("house")').show();
+            $('tr:contains("Gryffindor")').show();
+        }
+
+        function h(){
+            $('tr').hide();
+            $('tr:contains("house")').show();
+            $('tr:contains("Hufflepuff")').show();
+        }
+
+        function s(){
+            $('tr').hide();
+            $('tr:contains("house")').show();
+            $('tr:contains("Slytherin")').show();
+        }
+
+        function r(){
+            $('tr').hide();
+            $('tr:contains("house")').show();
+            $('tr:contains("Ravenclaw")').show();
+        }
+
+        function rs(){
+            $('tr').show();
+        }
+
+
+        $("tr:odd").css("background-color", "orange");
+
+        });
+
+        </script>
+</html>
