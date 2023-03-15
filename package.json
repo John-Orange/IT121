@@ -1,0 +1,18 @@
+{
+  "name": "week10",
+  "version": "1.0.0",
+  "description": "IT 121 HW 10",
+  "main": "demo.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/john-orange/it121.git)"
+  },
+  "author": "zhongyuan huang",
+  "license": "ISC"
+}
