@@ -1,0 +1,165 @@
+<canvas id="picasso" height=1090 width=1090></canvas>
+<script>
+    let canvas = document.getElementById('picasso');
+    let ctx = canvas.getContext('2d');
+
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+    ctx.font = "20px Arial";
+    ctx.fillText("Doraemon",10,50);
+
+    var grd = ctx.createLinearGradient(0, 150, 0, 80);
+    grd.addColorStop(0, "lightgreen");
+    grd.addColorStop(1, "lightpink");
+
+
+    box();
+    function box(){
+    ctx.beginPath();
+    ctx.fillStyle = grd;
+    ctx.rect(150,20,700,640)
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke();
+    }
+
+    ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.arc(500,350,300,0, 2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.save();
+    ctx.arc(500,400,250,0, 2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.restore();
+    ctx.ellipse(430,200,70,100,0,0,2*Math.PI);
+    ctx.closePath();
+    ctx.fill()
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.restore();
+    ctx.ellipse(570,200,70,100,0,0,2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.arc(500,300,30,0, 2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(490,290,8,0, 2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(500, 330);
+    ctx.lineTo(500, 430);
+    ctx.stroke();
+
+    //ctx.beginPath();
+    //ctx.rect(300,430, 400, 100);
+    //ctx.quadraticCurveTo(300,480,700,480)
+    //ctx.moveTo(300, 480);
+    //ctx.lineTo(700, 480);
+    //ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.arc(500,430,200,0, 1*Math.PI);
+    ctx.moveTo(300, 430);
+    ctx.lineTo(700, 430);
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.fillStyle = "orange";
+    //ctx.bezierCurveTo(420,610,700,300,580,610);
+    //ctx.arcTo(150, 20, 150, 70, 50);
+    ctx.fill();
+    ctx.closePath();
+    ctx.stroke();
+
+
+
+    ctx.beginPath();
+    ctx.quadraticCurveTo(300,350,450,350)
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.quadraticCurveTo(700,350,550,350)
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.quadraticCurveTo(300,280,450,330)
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.quadraticCurveTo(700,280,550,330)
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.quadraticCurveTo(300,420,450,370)
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.quadraticCurveTo(700,420,550,370)
+    ctx.stroke();
+
+    var x = 420
+
+    const dc = () => {
+    ctx.clearRect(380,140,80,130)
+    ctx.clearRect(394,185,72,100)
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    //ctx.arc(450,250,30,0, 2*Math.PI);
+    ctx.arc(x,250,30,0, 2*Math.PI);
+    //ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    if (x <= 445)
+        x +=5;
+    }
+
+    var myInterval = setInterval(dc, 1000)
+
+    //ctx.beginPath();
+    //ctx.fillStyle = "white";
+    //ctx.arc(445,250,10,0, 2*Math.PI);
+    //ctx.arc(400,250,10,0, 2*Math.PI);
+    //ctx.closePath();
+    //ctx.fill();
+    //ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    ctx.arc(550,250,30,0, 2*Math.PI);
+    ////ctx.arc(590,250,30,0, 2*Math.PI);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+
+    //ctx.beginPath();
+    //ctx.fillStyle = "white";
+    //ctx.arc(540,250,10,0, 2*Math.PI);
+    ////ctx.arc(585,250,10,0, 2*Math.PI);
+    //ctx.closePath();
+    //ctx.fill();
+    //ctx.stroke();
+
+
+
+
+</script>
